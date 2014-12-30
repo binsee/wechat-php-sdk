@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
+  <url>
+    <loc>https://binsee.github.io/wechat-php-sdk/2014/201412310330/</loc>
+    <lastmod>2014-12-30T19:37:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>博客程序主题更新修复，找回了之前的留言数据</title>
+        <pubTime>2014-12-30T19:30:36.000Z</pubTime>
+        
+         <content><![CDATA[<p>之前使用这个hexo博客，几个文章经常更新，上传后文章url地址就变了，导致评论系统没有正确识别到页面，之前的评论也就显示不出来了。</p>
+<p>后来更新博客主题，参考的主题代码中有问题，导致留言所有页面都能显示，这几天给处理了一下。</p>
+<p>今天对博客主题又折腾了一下，差不多定型了，现在没有什么bug了。之前的留言信息也都从评论系统后台导进来了，之后可以正常使用了。</p>
+<p>好了，收工，去睡觉了。</p>
+<p>PS:最近微信官方没有更新公众号的开发文档，感觉是在憋大招，马上过年了，别太吓人，要不怕wechat-php-sdk跟随更新压力太大 =_=!! </p>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="博客" url="https://binsee.github.io/wechat-php-sdk/categories/%E5%8D%9A%E5%AE%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+    
+    
+  <url>
+    <loc>https://binsee.github.io/wechat-php-sdk/2014/201412300239/</loc>
+    <lastmod>2014-12-29T21:08:35.000Z</lastmod>
+    <data>
+        <display>
+        <title>博客主题修改及功能改动</title>
+        <pubTime>2014-12-29T18:39:26.000Z</pubTime>
+        
+        <tag>Hexo </tag>
+         
+         <content><![CDATA[<p>研究了几个小时，把参考<a href="http://gengbiao.me" target="_blank" rel="external">coney主题</a>对博客主题进行修改。</p>
+<p>并添加了七牛图床，以及其他一些改动。总体就是希望博客能更好用一点。</p>
+<p>欢迎大家在此进行交流，互相学习。</p>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="博客" url="https://binsee.github.io/wechat-php-sdk/categories/%E5%8D%9A%E5%AE%A2/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://binsee.github.io/wechat-php-sdk/2014/2014101401/</loc>
+    <lastmod>2014-12-29T19:48:24.000Z</lastmod>
+    <data>
+        <display>
+        <title>公众号开始支持消息体加密，开源类库已更新</title>
+        <pubTime>2014-10-14T09:00:47.000Z</pubTime>
+        
+         <content><![CDATA[<p><strong>今天，公众号平台开始支持消息体加密。<br>已经在第一时间，更新了开源类库<a href="https://github.com/binsee/wechat-php-sdk" target="_blank" rel="external">wechat-php-sdk</a>，增加了对公众号的加密方案的支持。</strong></p>
+<hr>
+<p>下面简单做个笔记：<br>经过对比，使用方案和企业号的加密方案基本一样，可以说是直接拿来用的。但也有区别的地方：</p>
+<h2 id="加密模式：">加密模式：</h2>
+<p>企业号：强制加密方式<br>公众号：3种模式（明文模式、兼容模式、安全模式）</p>
+<p>公众平台提供了3种加解密的模式供开发者选择，即明文模式、兼容模式、安全模式(可在“开发者中心”选择相应模式),选择兼容模式和安全模式前，需在开发者中心填写消息加解密密钥EncodingAESKey。<br>明文模式：维持现有模式，没有适配加解密新特性，消息体明文收发，默认设置为明文模式<br>兼容模式：公众平台发送消息内容将同时包括明文和密文，消息包长度增加到原来的3倍左右；公众号回复明文或密文均可，不影响现有消息收发；开发者可在此模式下进行调试<br>安全模式（推荐）：公众平台发送消息体的内容只含有密文，公众账号回复的消息体也为密文，建议开发者在调试成功后使用此模式收发消息</p>
+<h2 id="加密使用范围:">加密使用范围:</h2>
+<p>企业号: 接口验证、接口回调、回复接口回调<br>公众号：接口回调、回复接口回调</p>
+<h2 id="参数设置：">参数设置：</h2>
+<p>EncodingAESKey 在平台上进行随机生成</p>
+<h2 id="其他：">其他：</h2>
+<p>这里得吐槽一下，公众平台上传的初版加密方案例程中，php版用的还是企业号平台有问题那版的例程。</p>
+<p>小问题在：<br>示例代码\php\pkcs7Encoder.php 第93行，需要把那个print注释掉<br>否则会在加密函数返回前输出一次加密后的字符串，导致无法解析，客户无法收到回复</p>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="公众平台" url="https://binsee.github.io/wechat-php-sdk/categories/%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://binsee.github.io/wechat-php-sdk/2014/201411032325/</loc>
+    <lastmod>2014-12-29T19:37:03.000Z</lastmod>
+    <data>
+        <display>
+        <title>关于微信公众平台调整SSL安全策略的测试</title>
+        <pubTime>2014-11-03T15:25:59.000Z</pubTime>
+        
+         <content><![CDATA[<h2 id="引文：微信平台官方的公告">引文：微信平台官方的公告</h2>
+<blockquote>
+<div class="inner"><strong><a href="https://mp.weixin.qq.com/cgi-bin/announce?action=getannouncement&amp;key=1414562353&amp;version=6&amp;lang=zh_CN" target="_blank" rel="external">公众平台调整SSL安全策略，请开发者注意升级</a></strong><div id="content"><p><span style="font-family:微软雅黑, Microsoft YaHeifont-size:14pxfont-family:微软雅黑, Microsoft YaHei;font-size:14px">近一段时间HTTPS加密协议SSL曝出高危漏洞，可能导致网络中传输的数据被黑客监听，对用户信息、网络账号密码等安全构成威胁。为保证用户信息以及通信安全，微信公众平台将关闭掉SSLv2、SSLv3版本支持，不再支持部分使用SSLv2、 SSLv3或更低版本的客户端调用。<span style="color: rgb(0, 0, 0);"><strong>请仍在使用这些版本的开发者于11月30日前尽快修复升级。</strong></span></span></p><div><span style="font-family:微软雅黑, Microsoft YaHeifont-size:14pxfont-family:微软雅黑, Microsoft YaHei;font-size:14px">注意：通过微信开放平台（open.weixin.qq.com）进行移动应用和网页应用开发的开发者也同样需要修复升级。<br>建议开发者使用如下方法进行修复：<br>OpenSSL（<a href="http://www.openssl.org）可使用SSL_CTX" target="_blank" rel="external">http://www.openssl.org）可使用SSL_CTX</a> <em>SSL_CTX_new(const SSL_METHOD </em>method)函数设置SSL客户端请求方法，使用TLSv1_client_method或更高版本。<br><br>示例1（php）:<br>curl_setopt($curl, CURLOPT_SSLVERSION, CURL_SSLVERSION_TLSv1);<br><br>示例2（C#）:<br>System.Net.ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls12</span><iframe id="tmp_downloadhelper_iframe" style="display: none;"></iframe></div></div><p class="sign">微信团队<br><span id="online_time">2014年10月29日</span></p></div>
+
+
+</blockquote>
+<hr>
+<h2 id="缘起">缘起</h2>
+<p>就这个安全策略的更改，让一堆人都比较茫然。<br>在<strong><a href="https://github.com/dodgepudding/wechat-php-sdk" target="_blank" rel="external">wechat-php-sdk</a></strong>类库的部分使用者和开发者们，也进行了讨论：<br>部分链接：<strong><a href="https://github.com/dodgepudding/wechat-php-sdk/pull/149" target="_blank" rel="external">pull#149</a> 、 <a href="https://github.com/dodgepudding/wechat-php-sdk/pull/145" target="_blank" rel="external">pull#145</a> 、 <a href="https://github.com/dodgepudding/wechat-php-sdk/issues/150" target="_blank" rel="external">issues#150</a></strong></p>
+<p>虽然查阅很多文件，最终认为应该为CURLOPT_SSLVERSION参数使用数值1，但毕竟微信官方的接口到11月30日后才会进行更改，才能得出结论。而查阅到的文件中都没有明确说TLS方式的值是1，心里总有些没底。因此今天查了查资料，自己做个模拟试验，来证明是否可用。</p>
+<p>我的本地服务器端软件是phpStudy 2014版，集成的组件很多，我主要用Apache，而php有5.2-5.6共计5个版本。</p>
+<p>思路：<br>1、使用Apache搭建https服务器<br>2、限制https服务器不允许使用SSLv2、SSLv3。也就是说只能用TLS方式了<br>这里就不说配置https的过程了，相关教程一堆。这里把最关键的关闭SSLv2、v3的内容说一下：<br>Apache的：<br>在httpd-ssl.conf文件中替换这两个设置：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="constant">SSLProtocol</span> all -<span class="constant">SSLv3</span> -<span class="constant">SSLv2</span> </div><div class="line"><span class="constant">SSLCipherSuite</span>  <span class="constant">ECDHE</span>-<span class="constant">RSA</span>-<span class="constant">AES128</span>-<span class="constant">GCM</span>-<span class="constant">SHA256</span><span class="symbol">:ECDHE-RSA-AES128-SHA</span><span class="symbol">:ECDHE-RSA-RC4-SHA</span><span class="symbol">:AES128-GCM-SHA256</span><span class="symbol">:AES128-SHA256</span><span class="symbol">:AES128-SHA</span><span class="symbol">:ECDHE-RSA-AES256-GCM-SHA384</span><span class="symbol">:ECDHE-RSA-AES256-SHA384</span><span class="symbol">:ECDHE-RSA-AES256-SHA</span><span class="symbol">:AES256-GCM-SHA384</span><span class="symbol">:AES256-SHA256</span><span class="symbol">:AES256-SHA</span><span class="symbol">:ECDHE-RSA-AES128-SHA256</span><span class="symbol">:RC4-SHA</span><span class="symbol">:</span>!<span class="symbol">aNULL:</span>!<span class="symbol">eNULL:</span>!<span class="constant">EXPORT</span><span class="symbol">:</span>!<span class="constant">DES</span><span class="symbol">:</span>!<span class="number">3</span><span class="constant">DES:</span>!<span class="constant">MD5</span><span class="symbol">:</span>!<span class="constant">DSS</span><span class="symbol">:</span>!<span class="constant">PKS</span></div></pre></td></tr></table></figure>
+
+<p>这样就无法使用SSLv2、v3的方式连接https了，只能用TLS。<br>其他环境的请看文章最后的参考<a href="#查阅的文件">文章链接部分</a>。</p>
+<p>使用的测试代码：<br>我将https的443端口指向的目录里有个1.php文件，内容很简单：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">&lt;?php</span></div><div class="line"><span class="keyword">echo</span> <span class="string">"yes!"</span>;</div><div class="line"><span class="preprocessor">?&gt;</span></div></pre></td></tr></table></figure>
+
+<p>然后是普通的http访问的页面<a href="http://127.0.0.1/99.php，代码如下：" target="_blank" rel="external">http://127.0.0.1/99.php，代码如下：</a></p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="preprocessor">&lt;?php</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">http_get</span><span class="params">(<span class="variable">$url</span>)</span></span>{</div><div class="line">    <span class="variable">$oCurl</span> = curl_init();</div><div class="line">    <span class="keyword">if</span>(stripos(<span class="variable">$url</span>,<span class="string">"https://"</span>)!==<span class="keyword">FALSE</span>){</div><div class="line">        curl_setopt(<span class="variable">$oCurl</span>, CURLOPT_SSL_VERIFYPEER, <span class="keyword">FALSE</span>);</div><div class="line">        curl_setopt(<span class="variable">$oCurl</span>, CURLOPT_SSL_VERIFYHOST, <span class="keyword">FALSE</span>);</div><div class="line">        curl_setopt(<span class="variable">$oCurl</span>, CURLOPT_SSLVERSION,<span class="number">1</span>); <span class="comment">//CURL_SSLVERSION_TLSv1</span></div><div class="line">    }</div><div class="line">    curl_setopt(<span class="variable">$oCurl</span>, CURLOPT_URL, <span class="variable">$url</span>);</div><div class="line">    curl_setopt(<span class="variable">$oCurl</span>, CURLOPT_RETURNTRANSFER, <span class="number">1</span> );</div><div class="line">    <span class="variable">$sContent</span> = curl_exec(<span class="variable">$oCurl</span>);</div><div class="line">    <span class="variable">$aStatus</span> = curl_getinfo(<span class="variable">$oCurl</span>);</div><div class="line">    curl_close(<span class="variable">$oCurl</span>);</div><div class="line">    <span class="keyword">if</span>(intval(<span class="variable">$aStatus</span>[<span class="string">"http_code"</span>])==<span class="number">200</span>){</div><div class="line">        <span class="keyword">return</span> <span class="variable">$sContent</span>;</div><div class="line">    }<span class="keyword">else</span>{</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    }</div><div class="line">}</div><div class="line"><span class="variable">$r</span>=http_get(<span class="string">"https://127.0.0.1/1.php"</span>);</div><div class="line">var_dump(<span class="variable">$r</span>);</div><div class="line"><span class="keyword">exit</span>;</div><div class="line"><span class="preprocessor">?&gt;</span></div></pre></td></tr></table></figure>
+
+<p>访问http页面：<a href="http://127.0.0.1/99.php" target="_blank" rel="external">http://127.0.0.1/99.php</a><br>显示的结果是：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">string</span>(<span class="number">4</span>) <span class="string">"yes!"</span></div></pre></td></tr></table></figure>
+
+<p>测试其他访问方式，修改99.php中 第7行的数值，进行测试。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="title">CURLOPT_SSLVERSION</span> 参数可选值的定义如下：</div><div class="line">CURL_SSLVERSION_DEFAULT (<span class="number">0</span>)</div><div class="line">CURL_SSLVERSION_TLSv1 (<span class="number">1</span>)</div><div class="line">CURL_SSLVERSION_SSLv2 (<span class="number">2</span>)</div><div class="line">CURL_SSLVERSION_SSLv3 (<span class="number">3</span>)</div><div class="line">CURL_SSLVERSION_TLSv1_0 (<span class="number">4</span>)</div><div class="line">CURL_SSLVERSION_TLSv1_1 (<span class="number">5</span>)</div><div class="line">CURL_SSLVERSION_TLSv1_2 (<span class="number">6</span>)</div><div class="line">其中，后三种方式，在curl <span class="number">7</span>.<span class="number">34</span>版以后才支持。</div></pre></td></tr></table></figure>
+
+<p>你可以发现，只要数值为2或3，都无法访问。而是用其他数值，根据php版本和curl版本不同，是否可以访问的结果也不同。</p>
+<hr>
+<h2 id="测试结果：">测试结果：</h2>
+<p>经过测试（本地搭建https服务器，限制只能用tls验证），HTTPS修改为tls验证方式后，通过设置参数<br>curl_setopt($oCurl, CURLOPT_SSLVERSION, 1);<br>可以访问（不加也可以，会自动尝试TLS/SSL方式，但最好是加上）。</p>
+<p>测试结果如下：<br>php版本5.2、5.3，curl版本为：7.21.0  只能用值1，即TLSv1<br>php版本5.4、5.5，curl版本：7.36.0  OpenSSL版本：0.9.8y/1.0.1f  可用值1或4，即TLSv1/v1.0<br>php版本5.6，curl版本：7.36.0  OpenSSL版本：1.0.1g  可用值1或4，即TLSv1/v1.0</p>
+<p>或许是我服务器https配置问题，只能使用TLSv1.0访问，使用TLS的V1.1、V1.2版本会访问失败（即常量5、6）。</p>
+<p>由此测试得出结论，国内无论用哪家的php空间，php版本至少达到5.2，curl版本为7.21及以上，使用常量值1即可（再低的我这没版本可以测试）。</p>
+<hr>
+<h2 id="查阅的文件">查阅的文件</h2>
+<p>CURLOPT_SSLVERSION选项参考：<a href="http://php.net/manual/en/function.curl-setopt.php" target="_blank" rel="external">http://php.net/manual/en/function.curl-setopt.php</a><br>apache下配置https的文档：<a href="http://flyli815.iteye.com/blog/1837204" target="_blank" rel="external">http://flyli815.iteye.com/blog/1837204</a><br><a href="http://csq-3.blog.163.com/blog/static/38738439200911741031190/" target="_blank" rel="external">http://csq-3.blog.163.com/blog/static/38738439200911741031190/</a><br>关闭apache下https的SSLv2、SSLv3访问设置：<a href="http://www.myhack58.com/Article/html/3/62/2014/54804_5.htm" target="_blank" rel="external">http://www.myhack58.com/Article/html/3/62/2014/54804_5.htm</a><br>其他：<a href="https://wiki.mozilla.org/Security/Server_Side_TLS" target="_blank" rel="external">https://wiki.mozilla.org/Security/Server_Side_TLS</a></p>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="公众平台" url="https://binsee.github.io/wechat-php-sdk/categories/%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://binsee.github.io/wechat-php-sdk/2014/2014101601/</loc>
+    <lastmod>2014-12-29T19:36:54.000Z</lastmod>
+    <data>
+        <display>
+        <title>公众平台加密方案,订阅号无法回复问题解决方案</title>
+        <pubTime>2014-10-16T15:45:08.000Z</pubTime>
+        
+         <content><![CDATA[<h1 id="关于公众平台加密方案的，存在一个问题，请订阅号注意：">关于公众平台加密方案的，存在一个问题，请订阅号注意：</h1>
+<p><strong>由于未认证的订阅号没有appid，所以在解密时，由于没有传入appid，会导致解密时appid效验失败，且回复时对信息的加密到微信服务器时会验证失败，从而用户收不到回信。</strong></p>
+<h1 id="解决方法：">解决方法：</h1>
+<h2 id="步骤1、官方的Prpcrypt类库decrypt()函数">步骤1、官方的Prpcrypt类库decrypt()函数</h2>
+<p>搜索 <code>$from_appid = substr($content, $xml_len + 4);</code>，按如下修改</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">    <span class="variable">$from_appid</span> = substr(<span class="variable">$content</span>, <span class="variable">$xml_len</span> + <span class="number">4</span>);</div><div class="line">    <span class="keyword">if</span> (!<span class="variable">$appid</span>)</div><div class="line">        <span class="variable">$appid</span> = <span class="variable">$from_appid</span>;</div><div class="line">    <span class="comment">//如果传入的appid是空的，则认为是订阅号，使用数据中提取出来的appid</span></div><div class="line">} <span class="keyword">catch</span> (<span class="keyword">Exception</span> <span class="variable">$e</span>) {</div></pre></td></tr></table></figure>
+
+<p>然后下边搜索<code>return array(0, $xml_content)</code>按如下修改</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (<span class="variable">$from_appid</span> != <span class="variable">$appid</span>)</div><div class="line">    <span class="keyword">return</span> <span class="keyword">array</span>(ErrorCode::<span class="variable">$ValidateAppidError</span>, <span class="keyword">null</span>);</div><div class="line"><span class="comment">//不注释上边两行，避免传入appid是错误的情况</span></div><div class="line"><span class="keyword">return</span> <span class="keyword">array</span>(<span class="number">0</span>, <span class="variable">$xml_content</span>, <span class="variable">$from_appid</span>); </div><div class="line"><span class="comment">//增加appid，为了解决后面加密回复消息的时候没有appid的订阅号会无法回复</span></div></pre></td></tr></table></figure>
+
+<p>注意<code>return array(0, $xml_content)</code>替换为</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">return</span> <span class="keyword">array</span>(<span class="number">0</span>, <span class="variable">$xml_content</span>, <span class="variable">$from_appid</span>);</div></pre></td></tr></table></figure>
+
+<h2 id="步骤2、">步骤2、</h2>
+<p>在调用 <code>decrypt($encryptStr,&#39;&#39;)</code>方法进行加密时会返回一个数组，如：</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$pc</span> = <span class="keyword">new</span> Prpcrypt(<span class="variable">$this</span><span class="variable">-&gt;encodingAesKey</span>);</div><div class="line"><span class="variable">$array</span> = <span class="variable">$pc</span><span class="variable">-&gt;decrypt</span>(<span class="variable">$encryptStr</span>,<span class="variable">$this</span><span class="variable">-&gt;appid</span>);</div><div class="line"><span class="keyword">if</span> (!<span class="keyword">isset</span>(<span class="variable">$array</span>[<span class="number">0</span>]) || (<span class="variable">$array</span>[<span class="number">0</span>] != <span class="number">0</span>)) {</div><div class="line">    <span class="keyword">if</span> (!<span class="variable">$return</span>) {</div><div class="line">        <span class="keyword">die</span>(<span class="string">'解密失败！'</span>);</div><div class="line">    } <span class="keyword">else</span> {</div><div class="line">        <span class="keyword">return</span> <span class="keyword">false</span>;</div><div class="line">    }</div><div class="line">}</div><div class="line"><span class="variable">$this</span><span class="variable">-&gt;postxml</span> = <span class="variable">$array</span>[<span class="number">1</span>]; <span class="comment">//解密出的数据</span></div><div class="line"><span class="keyword">if</span> (!<span class="variable">$this</span><span class="variable">-&gt;appid</span>)  <span class="comment">//验证自己原先的appid是否为空</span></div><div class="line">    <span class="variable">$this</span><span class="variable">-&gt;appid</span> = <span class="variable">$array</span>[<span class="number">2</span>];<span class="comment">//为了没有appid的订阅号。</span></div></pre></td></tr></table></figure>
+
+<p>这里$array[2] 为你的appid<br>保存这个appid，在回复信息进行加密时，传入这个appid进行加密即可。</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="variable">$pc</span> = <span class="keyword">new</span> Prpcrypt(<span class="variable">$this</span><span class="variable">-&gt;encodingAesKey</span>);</div><div class="line">		    <span class="variable">$array</span> = <span class="variable">$pc</span><span class="variable">-&gt;encrypt</span>(<span class="variable">$xmldata</span>, <span class="variable">$this</span><span class="variable">-&gt;appid</span>);</div></pre></td></tr></table></figure>
+
+<p>此问题发现和提出解决方案来自开源项目<strong><a href="https://github.com/dodgepudding/wechat-php-sdk" target="_blank" rel="external">wechat-php-sdk</a></strong>的<strong><a href="https://github.com/dodgepudding/wechat-php-sdk/pull/140" target="_blank" rel="external">pull#140</a></strong><br>本人在其基础上再次修改方案，见<strong><a href="https://github.com/dodgepudding/wechat-php-sdk/pull/141" target="_blank" rel="external">pull#141</a></strong></p>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="公众平台" url="https://binsee.github.io/wechat-php-sdk/categories/%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://binsee.github.io/wechat-php-sdk/2014/aboutwiki/</loc>
+    <lastmod>2014-12-29T19:36:19.000Z</lastmod>
+    <data>
+        <display>
+        <title>wiki文档说明</title>
+        <pubTime>2014-09-22T08:04:29.000Z</pubTime>
+        
+        <tag>wiki </tag>
+         
+         <content><![CDATA[<h1 id="wechat-php-sdk项目wiki使用说明"><a href="https://github.com/binsee/wechat-php-sdk/tree/master/wiki" title="wechat-php-sdk项目上的wiki目录" target="_blank" rel="external">wechat-php-sdk项目wiki</a>使用说明</h1>
+<hr>
+<p><strong><a href="https://github.com/binsee/wechat-php-sdk" title="wechat-php-sdk项目" target="_blank" rel="external">wechat-php-sdk项目</a></strong>的wiki文档<br>Make By：binsee</p>
+<hr>
+<h1 id="说明">说明</h1>
+<p>项目名称：<strong><a href="https://github.com/binsee/wechat-php-sdk" target="_blank" rel="external">wechat-php-sdk</a></strong><br>项目wiki：<strong><a href="https://github.com/binsee/wechat-php-sdk/wiki" target="_blank" rel="external">https://github.com/binsee/wechat-php-sdk/wiki</a></strong></p>
+<blockquote>
+<p><strong>wiki文档可以让你更好的了解 wechat-php-sdk 项目，更好的使用。 </strong><br><strong>欢迎对wiki文档内容进行补充，把 wechat-php-sdk 项目变得更清晰易懂。</strong></p>
+</blockquote>
+<h1 id="为你的wechat-php-sdk生成wiki">为你的wechat-php-sdk生成<a href="https://github.com/binsee/wechat-php-sdk/wiki" target="_blank" rel="external">wiki</a></h1>
+<p><strong>如果你在github上fork了<code>wechat-php-sdk</code>项目，而且想为项目生成wiki，可以用这里的文件来生成。</strong></p>
+<h2 id="使用步骤">使用步骤</h2>
+<ul>
+<li><p>在你的github上，fork或者创建<code>wechat-php-sdk</code>项目</p>
+</li>
+<li><p>激活项目wiki，已激活的请跳过</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">进入项目的设置页面：</div><div class="line">http<span class="variable">s:</span>//github.<span class="keyword">com</span>/你的用户名/wechat-php-sdk/settings</div><div class="line">找到Features一栏，把 Wikis 选项打钩，就可以激活你项目的wiki了</div></pre></td></tr></table></figure>
+
+<ul>
+<li><p>进入项目的wiki页面：<br><code>https://github.com/你的用户名/wechat-php-sdk/wiki</code></p>
+</li>
+<li><p>点绿色的 <code>Create the first page</code> 按钮</p>
+</li>
+<li><p>直接到下方点 <code>Save Page</code> 按钮</p>
+</li>
+<li><p>在右边找到 <code>Clone this wiki locally</code> 一栏，复制git地址：<br><code>git@github.com:你的用户名/wechat-php-sdk.wiki.git</code></p>
+</li>
+<li><p>在项目的上一层目录执行<br><code>git clone git@github.com:你的用户名/wechat-php-sdk.wiki.git</code></p>
+</li>
+<li><p>进入新出现的 <code>wechat-php-sdk.wiki</code> 目录，把wiki目录下的文件都复制过来</p>
+</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="special">#</span>这里有个高级用法，就是使用连接方式把wiki目录链接过来，而不是复制</div><div class="line">windows下的用法:  </div><div class="line">如项目目录为：E:<span class="command">\wechat</span>-php-sdk<span class="command">\</span></div><div class="line">项目wiki目录为：E:<span class="command">\wechat</span>-php-sdk.wiki<span class="command">\</span></div><div class="line">执行命令：</div><div class="line">        mklink /j E:<span class="command">\wechat</span>-php-sdk.wiki<span class="command">\wiki</span> E:<span class="command">\wechat</span>-php-sdk<span class="command">\wiki</span></div><div class="line">这样的话，两个目录就会被联接到一起。</div><div class="line">以后进行更改wiki在哪个目录都行，另一个目录都是同步的。</div><div class="line">分别在 项目目录 和 项目wiki目录 进行git提交就可以了。</div></pre></td></tr></table></figure>
+
+<ul>
+<li><p>然后直接缓存上传即可。</p>
+</li>
+<li><p>现在去你github上项目的wiki目录里看一下吧</p>
+</li>
+</ul>
+<h1 id="生成page">生成page</h1>
+<p><strong>你也可以将wiki文档，生成为个人站点，会更加直观。</strong></p>
+<p><strong>比如使用 Hexo 或者其他的框架之类。</strong></p>
+<p><strong>这块的话，请自行搜索相关资料。</strong>  </p>
+<p><strong>现在你所看到wiki Blog就是使用Hexo框架生成的.</strong></p>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="wechat-php-sdk" url="https://binsee.github.io/wechat-php-sdk/categories/wechat-php-sdk/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+</urlset>
