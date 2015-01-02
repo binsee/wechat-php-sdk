@@ -2332,6 +2332,7 @@ pre .xml .cdata {
 }
 .ds-excerpt {
   left: 0;
+  position: absolute;
 }
 .ds-replybox img {
   width: 30px !important;
