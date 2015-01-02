@@ -2399,18 +2399,19 @@ textarea::-moz-placeholder {
 }
 .icon-toc-toggle {
   width: 36px;
-  height: 26px;
+  height: 36px;
   cursor: pointer;
   -webkit-border-radius: 2px;
   border-radius: 2px;
   -webkit-box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
   text-decoration: none;
   background-color: #444;
   background-color: rgba(0,0,0,0.7);
   color: #fff;
-  line-height: 26px;
-  font-size: 22px;
+  line-height: 36px;
+  font-size: 30px;
   text-align: center;
   display: inline-block;
   font-family: FontAwesome;
