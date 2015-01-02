@@ -3,6 +3,38 @@
 
     
   <url>
+    <loc>https://binsee.github.io/wechat-php-sdk/2014/2014101401/</loc>
+    <lastmod>2015-01-02T15:15:59.000Z</lastmod>
+    <data>
+        <display>
+        <title>公众号开始支持消息体加密，开源类库已更新</title>
+        <pubTime>2014-10-14T09:00:47.000Z</pubTime>
+        
+         <content><![CDATA[<p><strong>今天，公众号平台开始支持消息体加密。<br>已经在第一时间，更新了开源类库<a href="https://github.com/binsee/wechat-php-sdk" target="_blank" rel="external">wechat-php-sdk</a>，增加了对公众号的加密方案的支持。</strong></p>
+<hr>
+<p>下面简单做个笔记：<br>经过对比，使用方案和企业号的加密方案基本一样，可以说是直接拿来用的。但也有区别的地方：</p>
+<h2 id="加密模式：">加密模式：</h2>
+<p>企业号：强制加密方式<br>公众号：3种模式（明文模式、兼容模式、安全模式）<br><a id="more"></a><br>公众平台提供了3种加解密的模式供开发者选择，即明文模式、兼容模式、安全模式(可在“开发者中心”选择相应模式),选择兼容模式和安全模式前，需在开发者中心填写消息加解密密钥EncodingAESKey。<br>明文模式：维持现有模式，没有适配加解密新特性，消息体明文收发，默认设置为明文模式<br>兼容模式：公众平台发送消息内容将同时包括明文和密文，消息包长度增加到原来的3倍左右；公众号回复明文或密文均可，不影响现有消息收发；开发者可在此模式下进行调试<br>安全模式（推荐）：公众平台发送消息体的内容只含有密文，公众账号回复的消息体也为密文，建议开发者在调试成功后使用此模式收发消息</p>
+<h2 id="加密使用范围:">加密使用范围:</h2>
+<p>企业号: 接口验证、接口回调、回复接口回调<br>公众号：接口回调、回复接口回调</p>
+<h2 id="参数设置：">参数设置：</h2>
+<p>EncodingAESKey 在平台上进行随机生成</p>
+<h2 id="其他：">其他：</h2>
+<p>这里得吐槽一下，公众平台上传的初版加密方案例程中，php版用的还是企业号平台有问题那版的例程。</p>
+<p>小问题在：<br>示例代码\php\pkcs7Encoder.php 第93行，需要把那个print注释掉<br>否则会在加密函数返回前输出一次加密后的字符串，导致无法解析，客户无法收到回复</p>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="公众平台" url="https://binsee.github.io/wechat-php-sdk/categories/%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://binsee.github.io/wechat-php-sdk/2014/201412310330/</loc>
     <lastmod>2014-12-30T19:37:35.000Z</lastmod>
     <data>
@@ -48,39 +80,6 @@
            
              
               <breadCrumb title="博客" url="https://binsee.github.io/wechat-php-sdk/categories/%E5%8D%9A%E5%AE%A2/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://binsee.github.io/wechat-php-sdk/2014/2014101401/</loc>
-    <lastmod>2014-12-29T19:48:24.000Z</lastmod>
-    <data>
-        <display>
-        <title>公众号开始支持消息体加密，开源类库已更新</title>
-        <pubTime>2014-10-14T09:00:47.000Z</pubTime>
-        
-         <content><![CDATA[<p><strong>今天，公众号平台开始支持消息体加密。<br>已经在第一时间，更新了开源类库<a href="https://github.com/binsee/wechat-php-sdk" target="_blank" rel="external">wechat-php-sdk</a>，增加了对公众号的加密方案的支持。</strong></p>
-<hr>
-<p>下面简单做个笔记：<br>经过对比，使用方案和企业号的加密方案基本一样，可以说是直接拿来用的。但也有区别的地方：</p>
-<h2 id="加密模式：">加密模式：</h2>
-<p>企业号：强制加密方式<br>公众号：3种模式（明文模式、兼容模式、安全模式）</p>
-<p>公众平台提供了3种加解密的模式供开发者选择，即明文模式、兼容模式、安全模式(可在“开发者中心”选择相应模式),选择兼容模式和安全模式前，需在开发者中心填写消息加解密密钥EncodingAESKey。<br>明文模式：维持现有模式，没有适配加解密新特性，消息体明文收发，默认设置为明文模式<br>兼容模式：公众平台发送消息内容将同时包括明文和密文，消息包长度增加到原来的3倍左右；公众号回复明文或密文均可，不影响现有消息收发；开发者可在此模式下进行调试<br>安全模式（推荐）：公众平台发送消息体的内容只含有密文，公众账号回复的消息体也为密文，建议开发者在调试成功后使用此模式收发消息</p>
-<h2 id="加密使用范围:">加密使用范围:</h2>
-<p>企业号: 接口验证、接口回调、回复接口回调<br>公众号：接口回调、回复接口回调</p>
-<h2 id="参数设置：">参数设置：</h2>
-<p>EncodingAESKey 在平台上进行随机生成</p>
-<h2 id="其他：">其他：</h2>
-<p>这里得吐槽一下，公众平台上传的初版加密方案例程中，php版用的还是企业号平台有问题那版的例程。</p>
-<p>小问题在：<br>示例代码\php\pkcs7Encoder.php 第93行，需要把那个print注释掉<br>否则会在加密函数返回前输出一次加密后的字符串，导致无法解析，客户无法收到回复</p>
-]]></content>
-         
-         
-           
-             
-              <breadCrumb title="公众平台" url="https://binsee.github.io/wechat-php-sdk/categories/%E5%85%AC%E4%BC%97%E5%B9%B3%E5%8F%B0/"/>
           
         </display>
     </data>
