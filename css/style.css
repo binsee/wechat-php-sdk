@@ -2330,10 +2330,6 @@ pre .xml .cdata {
   -webkit-box-shadow: inset 0 -1px 0 rgba(51,51,51,0.2) sf !important;
   box-shadow: inset 0 -1px 0 rgba(51,51,51,0.2) sf !important;
 }
-.ds-excerpt {
-  left: 0;
-  position: absolute;
-}
 .ds-replybox img {
   width: 30px !important;
   height: 30px !important;
