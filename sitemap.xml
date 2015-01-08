@@ -2,6 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://binsee.github.io/wechat-php-sdk/update/index.html</loc>
+    <lastmod>2015-01-08T17:31:20.000Z</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://binsee.github.io/wechat-php-sdk/2015/%E6%B3%84%E9%9C%B2%E5%87%BA%E6%9D%A5%E7%9A%84%E5%BE%AE%E4%BF%A1JSSDK%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/</loc>
+    <lastmod>2015-01-08T16:51:58.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://binsee.github.io/wechat-php-sdk/2014/2014101401/</loc>
     <lastmod>2015-01-02T15:15:59.000Z</lastmod>
   </url>
@@ -9,11 +19,6 @@
   <url>
     <loc>https://binsee.github.io/wechat-php-sdk/2014/201412310330/</loc>
     <lastmod>2014-12-30T19:37:35.000Z</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://binsee.github.io/wechat-php-sdk/update/index.html</loc>
-    <lastmod>2014-12-30T04:47:08.000Z</lastmod>
   </url>
   
   <url>
