@@ -72,7 +72,7 @@
 <p>目前接口中，安卓6.0.2版微信，使用朋友圈分享还是存在问题，依旧是点分享到朋友圈后，在分享界面返回不进行分享，接口会给判断为已进行了分享操作。而IOS版本里是正常的，等待官方修复吧。</p>
 <p>在界面操作接口中，隐藏按钮功能甚至连<code>举报</code>按钮都可以隐藏掉，非常强大吧。</p>
 <p>地理位置接口，可以直接调用内置地图功能，设定了一个坐标点后，进地图可以直接选择这个坐标点，进行导航。只支持调用腾讯地图和谷歌地图导航，谷歌地图在国内的情况，你懂得。好在腾讯地图做得也不错，试用了一下，感觉挺好的。</p>
-<p>更多接口的情况，大家到demo页体验一下吧。<br><strong>DEMO页面：</strong><a href="http://demo.open.weixin.qq.com/jssdk" target="_blank" rel="external">http://demo.open.weixin.qq.com/jssdk</a></p>
+<p>更多接口的情况，大家到官方demo页体验一下吧。<br><strong>官方DEMO页面：</strong><a href="http://demo.open.weixin.qq.com/jssdk" target="_blank" rel="external">http://demo.open.weixin.qq.com/jssdk</a></p>
 <p><img src="http://mp.weixin.qq.com/wiki/static/assets/e5afe45f8fe7b17bb1534be0545704ab.png" alt="Jssdk demo001.png"></p>
 <p>这些接口，极大的丰富了微信网页的扩展能力和玩法。以后微信HTML5应用会越来越精彩，越来越丰富多样化。</p>
 ]]></content>
