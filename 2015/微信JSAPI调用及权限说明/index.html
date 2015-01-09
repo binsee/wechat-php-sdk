@@ -7,16 +7,13 @@
   <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
   <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
   
-    <title>公众号开始支持消息体加密，开源类库已更新 | wechat-php-sdk Blog</title>
+    <title>微信JSAPI调用及权限说明 | wechat-php-sdk Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
     
     <meta name="author" content="binsee">
     
-    <meta name="description" content="今天，公众号平台开始支持消息体加密。已经在第一时间，更新了开源类库wechat-php-sdk，增加了对公众号的加密方案的支持。
-
-下面简单做个笔记：经过对比，使用方案和企业号的加密方案基本一样，可以说是直接拿来用的。但也有区别的地方：
-加密模式：
-企业号：强制加密方式公众号：3种模式（明文模式、兼容模式、安全模式）">
+    <meta name="description" content="新发布的JSAPI接口，对所有公众号进行开放。无论是服务号还是订阅号，是否认证都可以使用。
+要想使用新JS接口，必须先设置JS接口安全域名，JS接口只能再绑定的JS接口安全域名下调用。每个appid(每个appid对应一个公众号)只能设置3个域名，作为JS接口安全域名。">
     
     
     
@@ -80,38 +77,86 @@
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/wechat-php-sdk/2014/2014101401/" title="公众号开始支持消息体加密，开源类库已更新" itemprop="url">公众号开始支持消息体加密，开源类库已更新</a>
+      <a href="/wechat-php-sdk/2015/微信JSAPI调用及权限说明/" title="微信JSAPI调用及权限说明" itemprop="url">微信JSAPI调用及权限说明</a>
   </h1>
   <p class="article-author">By
     
       <a href="https://binsee.github.io/wechat-php-sdk" title="binsee">binsee</a>
     </p>
   <p class="article-time">
-    <time datetime="2014-10-14T09:00:47.000Z" itemprop="datePublished">2014年10月14日</time>
-    更新日期:<time datetime="2015-01-02T15:15:59.000Z" itemprop="dateModified">2015年01月02日</time>
+    <time datetime="2015-01-09T16:38:38.000Z" itemprop="datePublished">2015年01月10日</time>
+    更新日期:<time datetime="2015-01-09T16:38:38.000Z" itemprop="dateModified">2015年01月10日</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
 		
-		<div id="toc" class="toc-article">
-			<h2 class="toc-title"><span>文章目录</span></h2>
-		<ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#加密模式："><span class="toc-number">1.</span> <span class="toc-text">加密模式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加密使用范围:"><span class="toc-number">2.</span> <span class="toc-text">加密使用范围:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参数设置："><span class="toc-number">3.</span> <span class="toc-text">参数设置：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他："><span class="toc-number">4.</span> <span class="toc-text">其他：</span></a></li></ol>
-		</div>
-		
-		<p><strong>今天，公众号平台开始支持消息体加密。<br>已经在第一时间，更新了开源类库<a href="https://github.com/binsee/wechat-php-sdk" target="_blank" rel="external">wechat-php-sdk</a>，增加了对公众号的加密方案的支持。</strong></p>
+		<p>新发布的JSAPI接口，对所有公众号进行开放。无论是服务号还是订阅号，是否认证都可以使用。</p>
+<p>要想使用新JS接口，必须先设置<strong>JS接口安全域名</strong>，JS接口只能再绑定的<strong>JS接口安全域名</strong>下调用。每个appid(每个appid对应一个公众号)只能设置<strong><code>3</code></strong>个域名，作为<strong>JS接口安全域名</strong>。<br><a id="more"></a></p>
+<p>操作步骤如下：<br>登陆微信公众平台进入<strong><code>公众号设置</code></strong> &gt;&gt; <strong><code>功能设置</code></strong> 里填写<strong><code>JS接口安全域名</code></strong>。</p>
+<h3 id="新JS接口，实现了众多功能，列表如下：">新JS接口，实现了众多功能，列表如下：</h3>
+<blockquote>
+<p>2 基础接口</p>
+<blockquote>
+<p>2.1 判断当前客户端版本是否支持指定JS接口</p>
+</blockquote>
+<p>3 分享接口</p>
+<blockquote>
+<p>3.1 获取“分享到朋友圈”按钮点击状态及自定义分享内容接口<br>3.2 获取“分享给朋友”按钮点击状态及自定义分享内容接口<br>3.3 获取“分享到QQ”按钮点击状态及自定义分享内容接口<br>3.4 获取“分享到腾讯微博”按钮点击状态及自定义分享内容接口</p>
+</blockquote>
+<p>4 图像接口</p>
+<blockquote>
+<p>4.1 拍照或从手机相册中选图接口<br>4.2 预览图片接口<br>4.3 上传图片接口<br>4.4 下载图片接口</p>
+</blockquote>
+<p>5 音频接口</p>
+<blockquote>
+<p>5.1 开始录音接口<br>5.2 停止录音接口<br>5.3 监听录音自动停止接口<br>5.4 播放语音接口<br>5.5 暂停播放接口<br>5.6 停止播放接口<br>5.7 监听语音播放完毕接口<br>5.8 上传语音接口<br>5.9 下载语音接口</p>
+</blockquote>
+<p>6 智能接口</p>
+<blockquote>
+<p>6.1 识别音频并返回识别结果接口</p>
+</blockquote>
+<p>7 设备信息</p>
+<blockquote>
+<p>7.1 获取网络状态接口</p>
+</blockquote>
+<p>8 地理位置</p>
+<blockquote>
+<p>8.1 使用微信内置地图查看位置接口<br>8.2 获取地理位置接口</p>
+</blockquote>
+<p>9 界面操作</p>
+<blockquote>
+<p>9.1 隐藏右上角菜单接口<br>9.2 显示右上角菜单接口<br>9.3 关闭当前网页窗口接口<br>9.4 批量隐藏功能按钮接口<br>9.5 批量显示功能按钮接口<br>9.6 隐藏所有非基础按钮接口<br>9.7 显示所有功能按钮接口</p>
+</blockquote>
+<p>10 微信扫一扫</p>
+<blockquote>
+<p>10.1 调起微信扫一扫接口</p>
+</blockquote>
+<p>11 微信小店</p>
+<blockquote>
+<p>11.1 跳转微信商品页接口</p>
+</blockquote>
+<p>12 微信卡券</p>
+<blockquote>
+<p>12.1 调起适用于门店的卡券列表并获取用户选择列表<br>12.2 批量添加卡券接口<br>12.3 查看微信卡包中的卡券接口</p>
+</blockquote>
+<p>13 微信支付</p>
+<blockquote>
+<p>13.1 发起一个微信支付请求</p>
+</blockquote>
+</blockquote>
+<p>这些接口，并不是每个公众号都可以使用的，接口对应的使用权限如下：</p>
+<img title="JSAPI权限表" alt="JSAPI权限表" src="http://binsee-qiniu.qiniudn.com/wechat-php-sdk/images/JSAPI权限表.png">
+
+<p>权限部分你也可以登陆微信公众平台后台，到<strong>开发者中心</strong>内查看接口列表，会标注你公众号可用的接口权限信息。</p>
 <hr>
-<p>下面简单做个笔记：<br>经过对比，使用方案和企业号的加密方案基本一样，可以说是直接拿来用的。但也有区别的地方：</p>
-<h2 id="加密模式：">加密模式：</h2>
-<p>企业号：强制加密方式<br>公众号：3种模式（明文模式、兼容模式、安全模式）<br><a id="more"></a><br>公众平台提供了3种加解密的模式供开发者选择，即明文模式、兼容模式、安全模式(可在“开发者中心”选择相应模式),选择兼容模式和安全模式前，需在开发者中心填写消息加解密密钥EncodingAESKey。<br>明文模式：维持现有模式，没有适配加解密新特性，消息体明文收发，默认设置为明文模式<br>兼容模式：公众平台发送消息内容将同时包括明文和密文，消息包长度增加到原来的3倍左右；公众号回复明文或密文均可，不影响现有消息收发；开发者可在此模式下进行调试<br>安全模式（推荐）：公众平台发送消息体的内容只含有密文，公众账号回复的消息体也为密文，建议开发者在调试成功后使用此模式收发消息</p>
-<h2 id="加密使用范围:">加密使用范围:</h2>
-<p>企业号: 接口验证、接口回调、回复接口回调<br>公众号：接口回调、回复接口回调</p>
-<h2 id="参数设置：">参数设置：</h2>
-<p>EncodingAESKey 在平台上进行随机生成</p>
-<h2 id="其他：">其他：</h2>
-<p>这里得吐槽一下，公众平台上传的初版加密方案例程中，php版用的还是企业号平台有问题那版的例程。</p>
-<p>小问题在：<br>示例代码\php\pkcs7Encoder.php 第93行，需要把那个print注释掉<br>否则会在加密函数返回前输出一次加密后的字符串，导致无法解析，客户无法收到回复</p>
+<p>目前接口中，安卓6.0.2版微信，使用朋友圈分享还是存在问题，依旧是点分享到朋友圈后，在分享界面返回不进行分享，接口会给判断为已进行了分享操作。而IOS版本里是正常的，等待官方修复吧。</p>
+<p>在界面操作接口中，隐藏按钮功能甚至连<code>举报</code>按钮都可以隐藏掉，非常强大吧。</p>
+<p>地理位置接口，可以直接调用内置地图功能，设定了一个坐标点后，进地图可以直接选择这个坐标点，进行导航。只支持调用腾讯地图和谷歌地图导航，谷歌地图在国内的情况，你懂得。好在腾讯地图做得也不错，试用了一下，感觉挺好的。</p>
+<p>更多接口的情况，大家到demo页体验一下吧。<br><strong>DEMO页面：</strong><a href="http://demo.open.weixin.qq.com/jssdk" target="_blank" rel="external">http://demo.open.weixin.qq.com/jssdk</a></p>
+<p><img src="http://mp.weixin.qq.com/wiki/static/assets/e5afe45f8fe7b17bb1534be0545704ab.png" alt="Jssdk demo001.png"></p>
+<p>这些接口，极大的丰富了微信网页的扩展能力和玩法。以后微信HTML5应用会越来越精彩，越来越丰富多样化。</p>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -128,7 +173,7 @@
 
 
 
-  <div data-url="https://binsee.github.io/wechat-php-sdk/2014/2014101401/" data-title="公众号开始支持消息体加密，开源类库已更新 | wechat-php-sdk Blog" data-tsina="null" class="share clearfix">
+  <div data-url="https://binsee.github.io/wechat-php-sdk/2015/微信JSAPI调用及权限说明/" data-title="微信JSAPI调用及权限说明 | wechat-php-sdk Blog" data-tsina="null" class="share clearfix">
   </div>
 
 </div>
@@ -137,19 +182,11 @@
 	
 <nav class="article-nav clearfix">
  
- <div class="prev" >
- <a href="/wechat-php-sdk/2014/2014101601/" title="公众平台加密方案,订阅号无法回复问题解决方案">
-  <strong>上一篇:</strong><br/>
-  <span>
-  公众平台加密方案,订阅号无法回复问题解决方案</span>
-</a>
-</div>
-
 
 <div class="next">
-<a href="/wechat-php-sdk/2014/aboutwiki/"  title="wiki文档说明">
+<a href="/wechat-php-sdk/2015/微信JSSDK调用示例/"  title="微信JSSDK调用示例">
  <strong>下一篇:</strong><br/> 
- <span>wiki文档说明
+ <span>微信JSSDK调用示例
 </span>
 </a>
 </div>
@@ -159,7 +196,7 @@
 	<!-- 多说评论框 start -->
 
 <section class="comment">
-  <div class="ds-thread"  data-thread-key="/wechat-php-sdk/2014/2014101401/" data-title="公众号开始支持消息体加密，开源类库已更新" data-url="https://binsee.github.io/wechat-php-sdk/2014/2014101401/" id="ds_thread">
+  <div class="ds-thread"  data-thread-key="/wechat-php-sdk/2015/微信JSAPI调用及权限说明/" data-title="微信JSAPI调用及权限说明" data-url="https://binsee.github.io/wechat-php-sdk/2015/微信JSAPI调用及权限说明/" id="ds_thread">
     <noscript>Please enable JavaScript to view the <a href="//duoshuo.com/?ref_noscript">comments powered by duoshuo.</a></noscript>
   </div>
 </section>
@@ -167,13 +204,6 @@
 <!-- 多说评论框 end -->
 </div>  
       <div class="openaside"><a class="navbutton" href="#" title="显示侧边栏"></a></div>
-
-  <div id="toc" class="toc-aside">
-  <strong class="toc-title">文章目录</strong>
-    
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#加密模式："><span class="toc-number">1.</span> <span class="toc-text">加密模式：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#加密使用范围:"><span class="toc-number">2.</span> <span class="toc-text">加密使用范围:</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参数设置："><span class="toc-number">3.</span> <span class="toc-text">参数设置：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#其他："><span class="toc-number">4.</span> <span class="toc-text">其他：</span></a></li></ol>
-    
-  </div>
 
 <div id="asidepart">
 <aside class="clearfix">
@@ -306,8 +336,6 @@ $(document).ready(function(){
       m.removeClass('moveMain');
       a.css('display', 'block').removeClass('fadeOut');
       o.css('display', 'none');
-      
-      $('#toc.toc-aside').css('display', 'none');
         
     }
   });
@@ -415,11 +443,6 @@ $(document).ready(function(){
 	<script src="/wechat-php-sdk/js/gotop.js"></script>
 	-->
 
-
-	<a class="icon-toc-toggle" href="javascript:void(0)" title="文章目录"></a>
-	<!--
-	<script src="/wechat-php-sdk/js/toc_aside_toggle.js"></script>
-	-->
 
 </div>
 <script src="/wechat-php-sdk/js/toc_aside_toggle.js" type="text/javascript"></script>
