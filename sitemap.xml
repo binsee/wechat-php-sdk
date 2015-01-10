@@ -2,6 +2,11 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://binsee.github.io/wechat-php-sdk/2015/%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1JSAPI%E5%88%86%E4%BA%AB%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8%E7%9A%84%E7%96%91%E9%97%AE%E8%A7%A3%E5%86%B3/</loc>
+    <lastmod>2015-01-10T05:04:01.000Z</lastmod>
+  </url>
+  
+  <url>
     <loc>https://binsee.github.io/wechat-php-sdk/2015/%E5%BE%AE%E4%BF%A1JSSDK%E8%B0%83%E7%94%A8%E7%A4%BA%E4%BE%8B/</loc>
     <lastmod>2015-01-10T05:01:14.000Z</lastmod>
   </url>
