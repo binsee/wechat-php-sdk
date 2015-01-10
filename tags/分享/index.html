@@ -1,1 +1,200 @@
-<!DOCTYPE HTML><html lang="zh-CN"><head><meta charset="UTF-8"><meta name="baidu_union_verify" content="d1952c66cf48912e21c18c7c581f382a"><meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8"><meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88"><title>标签: 分享 | wechat-php-sdk Blog</title><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=3,minimum-scale=1"><meta name="author" content="binsee"><meta name="description" content="微信平台 wechat-php-sdk 微信开发"><link rel="alternate" href="atom.xml" title="wechat-php-sdk Blog" type="application/atom+xml"><link rel="icon" href="/wechat-php-sdk/img/favicon.ico"><link rel="apple-touch-icon" href="/wechat-php-sdk/img/pacman.jpg"><link rel="apple-touch-icon-precomposed" href="/wechat-php-sdk/img/pacman.jpg"><link rel="stylesheet" href="/wechat-php-sdk/css/style.css" type="text/css"><script>var _hmt=_hmt||[];!function(){var e=document.createElement("script"),t="1056c071402ac907c6dc726b17d72a55";e.src="//hm.baidu.com/hm.js?"+t;var c=document.getElementsByTagName("script")[0];c.parentNode.insertBefore(e,c)}();</script></head><body><header><div><div id="textlogo"><h1 class="site-name"><a href="/wechat-php-sdk/" title="wechat-php-sdk Blog">wechat-php-sdk Blog</a></h1><h2 class="blog-motto">微信平台wechat-php-sdk开源项目，开发文档blog</h2></div><div class="navbar"><a class="navbutton navmobile" href="#" title="菜单"></a></div><nav class="animated"><ul><ul><li><a href="/wechat-php-sdk/">首页</a></li><li><a href="/wechat-php-sdk/archives">归档</a></li><li><a href="/wechat-php-sdk/update">更新日志</a></li><li><a href="/wechat-php-sdk/readme">项目文档</a></li><li><a href="/wechat-php-sdk/about">关于项目</a></li><li><form class="search" action="//google.com/search" method="get" accept-charset="utf-8"><label>Search</label><input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索"> <input type="hidden" name="q" value="site:binsee.github.io/wechat-php-sdk"></form></li></ul></ul></nav></div></header><div id="container"><div class="archive-title"><h2 class="tag-icon">分享</h2></div><div id="main" class="archive-part clearfix"><div id="archive-page"><section class="post" itemscope itemprop="blogPost"><a href="/wechat-php-sdk/2015/关于微信JSAPI分享不能使用的疑问解决/" title="关于微信JSAPI分享不能使用的疑问解决" itemprop="url"><time datetime="2015-01-10T05:04:01.000Z" itemprop="datePublished">2015年01月10日</time><h1 itemprop="name">关于微信JSAPI分享不能使用的疑问解决</h1></a></section></div></div></div><footer><div id="footer"><p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> & <a href="http://gengbiao.me" target="_blank" title="coney">coney</a> © 2015 <a href="https://binsee.github.io/wechat-php-sdk" target="_blank" title="binsee">binsee</a></p></div></footer><script src="/wechat-php-sdk/js/jquery-2.1.0.min.js"></script><script type="text/javascript">$(document).ready(function(){function e(){"number"==typeof window.innerWidth?n=window.innerWidth:document.documentElement&&document.documentElement.clientWidth&&(n=document.documentElement.clientWidth)}$(".navbar").click(function(){$("header nav").toggleClass("shownav")});var n=0,s=$("#main"),a=$("#asidepart"),o=$(".closeaside"),d=$(".openaside");$(window).resize(function(){e(),n>=1024?$("header nav").removeClass("shownav"):(s.removeClass("moveMain"),a.css("display","block").removeClass("fadeOut"),d.css("display","none"))}),o.click(function(){a.addClass("fadeOut").css("display","none"),d.css("display","block").addClass("fadeIn"),s.addClass("moveMain")}),d.click(function(){d.css("display","none").removeClass("beforeFadeIn"),a.css("display","block").removeClass("fadeOut").addClass("fadeIn"),s.removeClass("moveMain")}),$(window).scroll(function(){d.css("top",Math.max(80,260-$(this).scrollTop()))})});</script><script type="text/javascript">var duoshuoQuery={short_name:"binsee"};!function(){var e=document.createElement("script");e.type="text/javascript",e.async=!0,e.src="//static.duoshuo.com/embed.js",e.charset="UTF-8",(document.getElementsByTagName("head")[0]||document.getElementsByTagName("body")[0]).appendChild(e)}();</script><div class="bottom-btn"><a class="icon-gotop" href="javascript:void(0)" title="返回顶部"></a><script src="/wechat-php-sdk/js/gotop.js" type="text/javascript"></script></div><script src="/wechat-php-sdk/js/toc_aside_toggle.js" type="text/javascript"></script></body></html>
+
+  <!DOCTYPE HTML>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="baidu_union_verify" content="d1952c66cf48912e21c18c7c581f382a">
+  <meta name="360-site-verification" content="67fbcc5a67f4c65c057315b28fa0b2c8" />
+  <meta name="google-site-verification" content="2GzxQ0VtXwTSUdmGm6DzcmhTzM_I9QmzCb_pzpMzD88" />
+  
+    <title>标签: 分享 | wechat-php-sdk Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=3, minimum-scale=1">
+    
+    <meta name="author" content="binsee">
+    
+    <meta name="description" content="微信平台 wechat-php-sdk 微信开发">
+    
+    
+    
+    
+    <link rel="alternate" href="atom.xml" title="wechat-php-sdk Blog" type="application/atom+xml">
+    
+    
+    <link rel="icon" href="/wechat-php-sdk/img/favicon.ico">
+    
+    
+    <link rel="apple-touch-icon" href="/wechat-php-sdk/img/pacman.jpg">
+    <link rel="apple-touch-icon-precomposed" href="/wechat-php-sdk/img/pacman.jpg">
+    
+    <link rel="stylesheet" href="/wechat-php-sdk/css/style.css" type="text/css">
+
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            var _bdId ='1056c071402ac907c6dc726b17d72a55';
+             hm.src = "//hm.baidu.com/hm.js?" + _bdId;
+             var s = document.getElementsByTagName("script")[0]; 
+             s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+     
+</head>
+
+    <body>
+      <header>
+        <div>
+		
+			<div id="textlogo">
+				<h1 class="site-name"><a href="/wechat-php-sdk/" title="wechat-php-sdk Blog">wechat-php-sdk Blog</a></h1>
+				<h2 class="blog-motto">微信平台wechat-php-sdk开源项目，开发文档blog</h2>
+			</div>
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			</a></div>
+			<nav class="animated">
+				<ul>
+					<ul>
+					 
+						<li><a href="/wechat-php-sdk/">首页</a></li>
+					
+						<li><a href="/wechat-php-sdk/archives">归档</a></li>
+					
+						<li><a href="/wechat-php-sdk/update">更新日志</a></li>
+					
+						<li><a href="/wechat-php-sdk/readme">项目文档</a></li>
+					
+						<li><a href="/wechat-php-sdk/about">关于项目</a></li>
+					
+					<li>
+					
+					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
+						<label>Search</label>
+						<input type="text" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="hidden" name="q" value="site:binsee.github.io/wechat-php-sdk">
+					</form>
+					
+					</li>
+					
+				</ul>
+			</nav>			
+</div>
+
+      </header>
+      <div id="container">
+        
+
+<div class="archive-title" >
+  <h2 class="tag-icon">分享</h2>
+  
+</div>
+<div id="main" class="archive-part clearfix">
+  <div id="archive-page">
+
+
+  <section class="post" itemscope itemprop="blogPost">
+  
+    <a href="/wechat-php-sdk/2015/关于微信JSAPI分享不能使用的疑问解决/" title="关于微信JSAPI分享不能使用的疑问解决" itemprop="url">
+  
+      <time datetime="2015-01-10T05:04:01.000Z" itemprop="datePublished">2015年01月10日</time>
+    <h1 itemprop="name">关于微信JSAPI分享不能使用的疑问解决</h1>
+    
+  </a>
+</section>
+
+
+  </div>
+</div>
+
+      </div>
+      <footer><div id="footer" >
+    
+		<p class="copyright">Powered by <a href="http://hexo.io" target="_blank" title="hexo">hexo</a> and Theme by <a href="https://github.com/A-limon/pacman" target="_blank" title="Pacman">Pacman</a> & <a href="http://gengbiao.me" target="_blank" title="coney">coney</a> © 2015 
+		
+		<a href="https://binsee.github.io/wechat-php-sdk" target="_blank" title="binsee">binsee</a>
+		
+		</p>
+</div>
+</footer>
+      <script src="/wechat-php-sdk/js/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){ 
+  $('.navbar').click(function(){
+    $('header nav').toggleClass('shownav');
+  });
+  var myWidth = 0;
+  function getSize(){
+    if( typeof( window.innerWidth ) == 'number' ) {
+      myWidth = window.innerWidth;
+    } else if( document.documentElement && document.documentElement.clientWidth) {
+      myWidth = document.documentElement.clientWidth;
+    };
+  };
+  var m = $('#main'),
+      a = $('#asidepart'),
+      c = $('.closeaside'),
+      o = $('.openaside');
+  $(window).resize(function(){
+    getSize(); 
+    if (myWidth >= 1024) {
+      $('header nav').removeClass('shownav');
+    }else
+    {
+      m.removeClass('moveMain');
+      a.css('display', 'block').removeClass('fadeOut');
+      o.css('display', 'none');
+        
+    }
+  });
+  c.click(function(){
+    a.addClass('fadeOut').css('display', 'none');
+    o.css('display', 'block').addClass('fadeIn');
+    m.addClass('moveMain');
+  });
+  o.click(function(){
+    o.css('display', 'none').removeClass('beforeFadeIn');
+    a.css('display', 'block').removeClass('fadeOut').addClass('fadeIn');      
+    m.removeClass('moveMain');
+  });
+  $(window).scroll(function(){
+    o.css("top",Math.max(80,260-$(this).scrollTop()));
+  });
+});
+</script>
+
+
+
+<script type="text/javascript">
+  var duoshuoQuery = {short_name:"binsee"};
+  (function() {
+    var ds = document.createElement('script');
+    ds.type = 'text/javascript';ds.async = true;
+    ds.src = '//static.duoshuo.com/embed.js';
+    ds.charset = 'UTF-8';
+    (document.getElementsByTagName('head')[0] 
+    || document.getElementsByTagName('body')[0]).appendChild(ds);
+  })();
+</script> 
+
+
+
+
+
+
+<div class="bottom-btn">
+
+	<a class="icon-gotop" href="javascript:void(0)" title="返回顶部"></a>
+	<script src="/wechat-php-sdk/js/gotop.js" type="text/javascript"></script>
+
+	<!--
+	<script src="/wechat-php-sdk/js/gotop.js"></script>
+	-->
+
+
+</div>
+<script src="/wechat-php-sdk/js/toc_aside_toggle.js" type="text/javascript"></script>
+
+
+
+    </body>
+   </html>
