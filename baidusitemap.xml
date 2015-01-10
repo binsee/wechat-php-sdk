@@ -3,6 +3,71 @@
 
     
   <url>
+    <loc>https://binsee.github.io/wechat-php-sdk/2015/%E5%AE%98%E6%96%B9wiki%E9%82%A3%E4%BA%9B%E4%BA%8B%E4%B9%8B%E5%AE%A2%E6%9C%8D%E6%8E%A5%E5%8F%A3/</loc>
+    <lastmod>2015-01-10T07:06:45.000Z</lastmod>
+    <data>
+        <display>
+        <title>官方wiki那些事之客服接口</title>
+        <pubTime>2015-01-10T07:06:45.000Z</pubTime>
+        
+        <tag>标签 </tag>
+         
+         <content><![CDATA[<p>微信公众平台官方wiki是做微信开发必须要看的，所有公开的开发接口、数据结构等都在里边有写。</p>
+<p>但是就这么一个重要的wiki，却总是搞点乌龙。今天就说说客服接口。</p>
+<a id="more"></a>
+
+<p>官方前一段开放了客服接口，公众号可以直接通过接口与微信用户进行客服沟通。公众号通过客服消息接口，以不同客服身份回复用户的信息，使用6.0.2版及以上版本的微信用户可以看到对应的客服头像和昵称。</p>
+<p>今天有个微信开发的朋友和我聊天时，说到他要反馈一个客服接口的问题。就是使用这个客服消息接口发送给用户的信息，用户可以收到，但只显示灰色头像，没有客服昵称。我就也去测试了一下，发现也是同样的情况。</p>
+<img src="http://binsee-qiniu.qiniudn.com/wechat-php-sdk/images/官方wiki那些事\\20150110153915.jpg">
+
+<p>测试代码如下：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="php"><span class="preprocessor">&lt;?php</span></span></div><div class="line"><span class="keyword">include</span> <span class="string">"wechat.class.php"</span>;</div><div class="line"><span class="keyword">include</span> <span class="string">'errCode.php'</span>;</div><div class="line"><span class="variable">$options</span> = <span class="keyword">array</span>(</div><div class="line">        <span class="string">'appsecret'</span>=&gt;<span class="string">'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'</span>,<span class="comment">//填写高级调用功能的密钥</span></div><div class="line">        <span class="string">'appid'</span>=&gt;<span class="string">'wxe66xxxxxxxxxxxxx'</span>,	<span class="comment">//填写高级调用功能的appid</span></div><div class="line">);</div><div class="line"><span class="variable">$weObj</span> = <span class="keyword">new</span> Wechat(<span class="variable">$options</span>);</div><div class="line"><span class="variable">$weObj</span><span class="variable">-&gt;checkAuth</span>();</div><div class="line"><span class="variable">$data</span> = <span class="keyword">array</span>(</div><div class="line">        <span class="string">"touser"</span>=&gt;<span class="string">'okDMTt9Vny9h9H_9E76tScP-mTNI'</span>,</div><div class="line">        <span class="string">'msgtype'</span>=&gt;<span class="string">"text"</span>,</div><div class="line">        <span class="string">'text'</span>=&gt;<span class="keyword">array</span>(</div><div class="line">            <span class="string">"content"</span>=&gt;time()</div><div class="line">        ),</div><div class="line">        <span class="string">'customservice'</span>=&gt;<span class="keyword">array</span>(</div><div class="line">	           <span class="string">'kfaccount'</span>=&gt;<span class="string">'001@pdstcgp'</span></div><div class="line">        )</div><div class="line">);</div><div class="line"><span class="variable">$s</span>=<span class="variable">$weObj</span><span class="variable">-&gt;sendCustomMessage</span>(<span class="variable">$data</span>);</div><div class="line"><span class="keyword">if</span> (!<span class="variable">$s</span>) {</div><div class="line">    <span class="keyword">echo</span> <span class="string">'错误码：'</span>.<span class="variable">$weObj</span><span class="variable">-&gt;errCode</span>;</div><div class="line">    <span class="keyword">echo</span> <span class="string">' 错误原因：'</span>.ErrCode::getErrText(<span class="variable">$weObj</span><span class="variable">-&gt;errCode</span>);</div><div class="line">    <span class="keyword">die</span>;</div><div class="line">}</div><div class="line"><span class="keyword">echo</span> <span class="string">"&lt;br&gt;&lt;br&gt;消息发送成功"</span>;</div><div class="line"><span class="preprocessor">?&gt;</span></div></pre></td></tr></table></figure>
+
+<p>官方的客服消息接口内容如下：</p>
+<blockquote>
+<p>客服接口-发消息<br>接口调用请求说明</p>
+<blockquote>
+<p>http请求方式: POST<br><a href="https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN" target="_blank" rel="external">https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token=ACCESS_TOKEN</a></p>
+</blockquote>
+<p>发送文本消息类型 所需的JSON数据包如下：</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">    "<span class="attribute">touser</span>":<span class="value"><span class="string">"OPENID"</span></span>,</div><div class="line">    "<span class="attribute">msgtype</span>":<span class="value"><span class="string">"text"</span></span>,</div><div class="line">    "<span class="attribute">text</span>":</div><div class="line">    <span class="value">{</span></div><div class="line">         "<span class="attribute">content</span>":<span class="value"><span class="string">"Hello World"</span></span></div><div class="line">    },</div><div class="line">    "<span class="attribute">customservice</span>":</div><div class="line">    <span class="value">{</span></div><div class="line">         "<span class="attribute">kfaccount</span>": <span class="value"><span class="string">"test1@kftest"</span></span></div><div class="line">    }</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>最后反复测试大半天，又登录多客服PC端测试，多客服的就正常，但接口的就是不行。</p>
+<p>如果改掉<code>customservice</code>字段，用户收到消息但是显示公众号的logo，而如果有<code>customservice</code>字段就认为是客服账号的，但不显示头像和昵称，可以判断为未能找到对应的客服账号，所以没能显示。按说官方wiki都是这样标的了，完全和官方标的结构都一致还不行，或许是官方接口还未完善？</p>
+<p>本来都要放弃，等几天看看官方或许会维护，之后可能就好用了。</p>
+<p>突然想到是不是<code>kfaccount</code>这个字段有问题，就往页面上边翻了翻，这一翻就囧了。。。</p>
+<blockquote>
+<p>添加客服帐号<br>开发者可以通过本接口为公众号添加客服账号，每个公众号最多添加10个客服账号。该接口调用请求如下：</p>
+<blockquote>
+<p>http请求方式: POST<br><a href="https://api.weixin.qq.com/customservice/kfaccount/add?access_token=ACCESS_TOKEN" target="_blank" rel="external">https://api.weixin.qq.com/customservice/kfaccount/add?access_token=ACCESS_TOKEN</a></p>
+</blockquote>
+<p>POST数据示例如下：</p>
+</blockquote>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">{</div><div class="line">     "<span class="attribute">kf_account</span>" : <span class="value"><span class="string">"test1@test"</span></span>,</div><div class="line">     "<span class="attribute">nickname</span>" : <span class="value"><span class="string">"客服1"</span></span>,</div><div class="line">     "<span class="attribute">password</span>" : <span class="value"><span class="string">"pswmd5"</span></span>,</div><div class="line">}</div></pre></td></tr></table></figure>
+
+<p>看出什么没有？</p>
+<p>发送客服消息接口里用的字段名是<code>kfaccount</code> 而添加客服接口的字段名是<code>kf_account</code> ，少了一个下划线！</p>
+<p>把代码里改成用<code>kf_account</code>作为字段名，进行测试，OK了。。</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="string">'customservice'</span>=&gt;<span class="keyword">array</span>(</div><div class="line">    <span class="string">'kf_account'</span>=&gt;<span class="string">'001@pdstcgp'</span></div><div class="line">)</div></pre></td></tr></table></figure>
+
+<img src="http://binsee-qiniu.qiniudn.com/wechat-php-sdk/images/官方wiki那些事\\20150110155058.png">
+
+
+<p>是不是满满的想吐槽？官方wiki上这种事情其实很多的，遇到按官方wiki行不通的，结合上下文好好想想、猜猜，或许就是因为一个逗比的符号问题造成的。</p>
+]]></content>
+         
+         
+           
+             
+              <breadCrumb title="分类" url="https://binsee.github.io/wechat-php-sdk/categories/%E5%88%86%E7%B1%BB/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://binsee.github.io/wechat-php-sdk/2015/%E5%85%B3%E4%BA%8E%E5%BE%AE%E4%BF%A1JSAPI%E5%88%86%E4%BA%AB%E4%B8%8D%E8%83%BD%E4%BD%BF%E7%94%A8%E7%9A%84%E7%96%91%E9%97%AE%E8%A7%A3%E5%86%B3/</loc>
     <lastmod>2015-01-10T05:04:01.000Z</lastmod>
     <data>
