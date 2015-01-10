@@ -4,7 +4,7 @@
   <subtitle><![CDATA[微信平台wechat-php-sdk开源项目，开发文档blog]]></subtitle>
   <link href="/wechat-php-sdk/atom.xml" rel="self"/>
   <link href="https://binsee.github.io/wechat-php-sdk/"/>
-  <updated>2015-01-10T05:52:54.371Z</updated>
+  <updated>2015-01-10T06:06:58.913Z</updated>
   <id>https://binsee.github.io/wechat-php-sdk/</id>
   
   <author>
@@ -46,10 +46,19 @@
 <p>测试一下，果然可以自定义分享了。</p>
 <img src="http://binsee-qiniu.qiniudn.com/wechat-php-sdk/images/about_WxJsApi/自定义分享测试.png">
 
-<p>因此得出结论如下：<br>新API在安卓上需要6.0.2版本才支持，而6.0.2是有两个版本的：</p>
-<blockquote>
-<p><code>6.0.2.56</code>是赶工限制自定义分享的，除了官方域，其他域名都没有权限调用分享接口。<br><code>6.0.2.58</code>版本修复了这个bug，认证的公众号可以拿到分享接口权限，正常使用。</p>
+<p>因此得出结论如下：</p>
+<p>总结一下，想要使用JSAPI的自定义分享，要满足以下条件：</p>
+<ol>
+<li>认证的公众号（服务号、订阅号）</li>
+<li>域名经过ICP备案（否则分享次数会受限）</li>
+<li>页面所在的域名加入了JS安全域名</li>
+<li>页面的初始化（wx.config）参数中有申请分享接口权限，而且签名是正确的。</li>
+<li>微信客户端版本要更新，安卓和IOS都需要更新到<code>6.0.2</code>版本及以上。<blockquote>
+<p>安卓需要注意一下，安卓上6.0.2是有两个版本的：<br><code>6.0.2.56</code>是赶工限制自定义分享的，除了官方域，其他域名都没有权限调用分享接口。<br><code>6.0.2.58</code>版本修复了这个bug，认证的公众号可以拿到分享接口权限，正常使用。<br>也就是说安卓版必须更新到<code>6.0.2.58</code>才能正常使用自定义分享。</p>
 </blockquote>
+</li>
+</ol>
+<p>另外需要注意的是，签名的时候，如果url带有<code>?a=1&amp;b=2</code>这类参数，是要包含在url里参与签名的。<br>而<code>#line100</code>这样跟在url后边的锚点，就不要算在url里参与签名了。</p>
 ]]></content>
     <summary type="html">
     <![CDATA[<p>昨天下午6点半，微信官方团队正式开放JSAPI接口，和一群做微信开发的大牛第一时间开始测试。</p>
